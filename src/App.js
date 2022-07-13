@@ -10,7 +10,7 @@ import {useModal} from './hooks'
 
 function App() {
   const [isOpen, actionResponse , setIsOpen] =  useModal('CONFIRM_MODAL', {title : 'hoba' , contant : 'lala '})
-
+ 
 
   return (
     <>
