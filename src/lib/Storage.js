@@ -1,4 +1,4 @@
-import SecureLS from 'secure-ls'
+import SecureLS from 'secure-ls';
 import {encodingType , keySecret , valueSecret} from '../config';
 class Storage  {
     constructor() {
@@ -6,16 +6,16 @@ class Storage  {
     } 
 
     setItem = (key, value) => {
-        this.storage.set(btoa(key + keySecret), value)
-    }
+        this.storage.set(btoa(key + keySecret), value);
+    };
 
-    getItem = key => this.storage.get(btoa(key + keySecret))
+    getItem = key => this.storage.get(btoa(key + keySecret));
 
     removeItem = key => {
         this.storage.remove(btoa(key + keySecret)); 
-    }
+    };
     getAllKeys = () => this.storage.getAllKeys(); 
     removeAllItems = () => this.storage.removeAll(); 
 }
 
-export default new Storage()
+export default new Storage();

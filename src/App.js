@@ -1,17 +1,17 @@
 
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom';
 import AuthMiddleware from './routes/AuthMiddleware';
 
-import {privateRoutes , publicRoutes} from './routes/routes'
+import {privateRoutes , publicRoutes} from './routes/routes';
 
 import RootModal from './components/Modals/RootModal';
 import Alert from './components/Alerts/Alert';
-import {useModal, useAlert} from './hooks'
+import {useModal, useAlert} from './hooks';
 
-function App() {
-  const [isOpen, actionResponse , setIsOpen] =  useModal('CONFIRM_MODAL', {title : 'hoba' , contant : 'lala '})
-  const [isOpenTwo , setAlertIsOpen] = useAlert('info')
-  const [isOpenThree , setAlertIsOpenTwo] = useAlert('success' , {message : 'lolo' , duration : 2000})
+const App = ()=> {
+  const [isOpen, actionResponse , setIsOpen] =  useModal('CONFIRM_MODAL', {title : 'hoba' , contant : 'lala '});
+  const [isOpenTwo , setAlertIsOpen] = useAlert('info');
+  const [isOpenThree , setAlertIsOpenTwo] = useAlert('success' , {message : 'lolo' , duration : 2000});
 
   return (
     <>
@@ -50,6 +50,6 @@ function App() {
     </Routes>
         </>
   );
-}
+};
 
 export default App;

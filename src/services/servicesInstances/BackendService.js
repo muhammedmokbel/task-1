@@ -1,5 +1,5 @@
 import BaseService from "../BaseService";
-import Storage from '../../lib/Storage'
+import Storage from '../../lib/Storage';
 import { STORAGE_TAGS } from "../../constants/Storage";
 import {backendDev} from "../../config";
 
@@ -8,7 +8,7 @@ import {backendDev} from "../../config";
 class BackendService extends BaseService{
 
     constructor(baseUrl,headers,  token, interceptors) {
-        super(baseUrl,   headers  , token,)
+        super(baseUrl,   headers  , token,);
 
     }
 
@@ -17,7 +17,7 @@ class BackendService extends BaseService{
     getAllPosts = () => ({
         url : '/todos', 
         method : 'GET' , 
-    })
+    });
 }
 
 

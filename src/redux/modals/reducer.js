@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit';
 
 
 const modalSlice = createSlice({
@@ -17,13 +17,13 @@ const modalSlice = createSlice({
         }, 
         closeModal : (state , action) => {
             state.isOpen = false; 
-            state.actionResponse = action.payload
+            state.actionResponse = action.payload;
         }
         
     }, 
 
 
-})
+});
 
 export const {openModal, closeModal}  = modalSlice.actions; 
 export default modalSlice.reducer; 

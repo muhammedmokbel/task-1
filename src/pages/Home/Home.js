@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap';
 
 const Home = () => {
     return (
@@ -8,6 +8,6 @@ const Home = () => {
             <Button>Click me</Button>
         </div>
     );
-}
+};
 
 export default Home;

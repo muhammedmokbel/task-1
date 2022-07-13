@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useSelector , useDispatch} from 'react-redux'
+import {useSelector , useDispatch} from 'react-redux';
 
 import Snackbar from '@mui/material/Snackbar';
 import Slide from '@mui/material/Slide';
@@ -13,11 +13,11 @@ const AlertBar = React.forwardRef(function AlertBar(props, ref) {
 });
 
 
-function TransitionLeft(props) {
+const TransitionLeft = (props) => {
   return <Slide {...props} direction="right" />;
-}
+};
 
-export default function Alert() {
+const Alert = () => {
   const state = useSelector(state => state.alert); 
   const dispatch = useDispatch(); 
 
@@ -29,7 +29,7 @@ export default function Alert() {
     type  , 
    } = state;
 
-   const handleCloseAlertDispatched = () => dispatch(closeAlert())
+   const handleCloseAlertDispatched = () => dispatch(closeAlert());
 
   
  
@@ -58,3 +58,5 @@ export default function Alert() {
     </div>
   );
 }
+
+export default Alert; 

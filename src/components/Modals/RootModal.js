@@ -1,8 +1,8 @@
-import {useSelector, useDispatch} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux';
 
 import { closeModal } from '../../redux/modals/reducer';
 
-import ConfirmationModal from './ConfirmationModals/ConfirmationModal'
+import ConfirmationModal from './ConfirmationModals/ConfirmationModal';
 
 
 const MODAL_COMPONENTS = {
@@ -16,13 +16,13 @@ const RootModal =() => {
     const props = useSelector(state => state.modal.modalProps); 
     const dispatch = useDispatch();
 
-   const closeModalDispatched = (response) => dispatch(closeModal(response))
+   const closeModalDispatched = (response) => dispatch(closeModal(response));
 
     
     if (!type)
         return null; 
     const SpecificModal = MODAL_COMPONENTS[type];
-    return <SpecificModal {...props} isOpen={isOpen} closeModal={closeModalDispatched}  /> 
-}
+    return <SpecificModal {...props} isOpen={isOpen} closeModal={closeModalDispatched}  />; 
+};
 
-export default RootModal
+export default RootModal;

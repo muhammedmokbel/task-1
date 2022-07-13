@@ -1,7 +1,7 @@
-import {Navigate , Outlet} from 'react-router-dom'
+import {Navigate , Outlet} from 'react-router-dom';
 
-import Storage from '../lib/Storage'
-import {STORAGE_TAGS} from '../constants/Storage'
+import Storage from '../lib/Storage';
+import {STORAGE_TAGS} from '../constants/Storage';
 
 
 const AuthMiddleware = ({
@@ -11,8 +11,8 @@ const AuthMiddleware = ({
 
 
     if (!isAuthProtected || (isAuthProtected && Storage.getItem(STORAGE_TAGS.TOKEN)))
-        return <Outlet /> 
-    return <Navigate to={{pathname : '/login'}}  />
-}
+        return <Outlet />; 
+    return <Navigate to={{pathname : '/login'}}  />;
+};
 
 export default AuthMiddleware; 
