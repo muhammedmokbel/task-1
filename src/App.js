@@ -1,20 +1,23 @@
-import {useCallback} from 'react'
-import {useSelector} from 'react-redux'
+
 import {Routes, Route} from 'react-router-dom'
 import AuthMiddleware from './routes/AuthMiddleware';
 
 import {privateRoutes , publicRoutes} from './routes/routes'
 
 import RootModal from './components/Modals/RootModal';
-import {useModal} from './hooks'
+import Alert from './components/Alerts/Alert';
+import {useModal, useAlert} from './hooks'
 
 function App() {
   const [isOpen, actionResponse , setIsOpen] =  useModal('CONFIRM_MODAL', {title : 'hoba' , contant : 'lala '})
- 
+  const [isOpenTwo , setAlertIsOpen] = useAlert('info')
+  const [isOpenThree , setAlertIsOpenTwo] = useAlert('success' , {message : 'lolo' , duration : 2000})
 
   return (
     <>
+   
   <RootModal  />
+  <Alert />
   
     <Routes>
  
