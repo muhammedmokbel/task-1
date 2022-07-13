@@ -9,16 +9,12 @@ import RootModal from './components/Modals/RootModal';
 import {useModal} from './hooks'
 
 function App() {
-  const modal = useSelector(state => ( {type : state.modal.modalType }))
-  const [isOpen , setIsOpen] =  useModal('TEST_MODAL')
+  const [isOpen, actionResponse , setIsOpen] =  useModal('CONFIRM_MODAL', {title : 'hoba' , contant : 'lala '})
 
-  
- 
 
   return (
     <>
   <RootModal  />
-  <button onClick={() => setIsOpen(true)}> click Modal </button>
   
     <Routes>
  

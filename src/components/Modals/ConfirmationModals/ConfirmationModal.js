@@ -11,8 +11,12 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function AlertDialogSlide({isOpen, closeModal}) {
+export default function ConfirmationModal({isOpen, closeModal , title = '' , contant = '' , buttons = {success :'yes' , fail :'No'} }) {
 
+  if (typeof buttons !== "object" || !buttons.success || !buttons.fail)
+    throw new Error('invalid Button Object !'); 
+
+    
 
   return (
     <div>
@@ -21,19 +25,18 @@ export default function AlertDialogSlide({isOpen, closeModal}) {
         open={isOpen}
         TransitionComponent={Transition}
         keepMounted
-        onClose={closeModal}
+        onClose={() => closeModal(false)}
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+        <DialogTitle>{title}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            Let Google help apps determine location. This means sending anonymous
-            location data to Google, even when no apps are running.
+            {contant}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={closeModal}>Disagree</Button>
-          <Button onClick={closeModal}>Agree</Button>
+          <Button onClick={() => closeModal(false)}>{buttons.fail}</Button>
+          <Button onClick={() => closeModal(true)}>{buttons.success}</Button>
         </DialogActions>
       </Dialog>
     </div>
