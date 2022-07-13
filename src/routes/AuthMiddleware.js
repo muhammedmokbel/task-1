@@ -1,4 +1,4 @@
-import {Route , Navigate , Outlet} from 'react-router-dom'
+import {Navigate , Outlet} from 'react-router-dom'
 
 import Storage from '../lib/Storage'
 import {STORAGE_TAGS} from '../constants/Storage'
