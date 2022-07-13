@@ -1,8 +1,10 @@
 // components 
 
+import Home from "../pages/Home/Home"
+
 
 const privateRoutes = [
-    {path : '/home' , component : () => <>home</>}
+    {path : '/home' , component : Home}
 ]
 
 
