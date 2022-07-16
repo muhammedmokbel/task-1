@@ -16,7 +16,7 @@ const App = ()=> {
    
   <RootModal  />
   <Alert />
-  
+
     <Routes>
  
     {privateRoutes.map(({component :Component  , path}, index) => (

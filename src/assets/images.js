@@ -1,0 +1,1 @@
+export {default as Oops} from './images/preview.png'; 
