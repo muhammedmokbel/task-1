@@ -1,4 +1,4 @@
-
+import React from 'react'; 
 import {Routes, Route} from 'react-router-dom';
 import AuthMiddleware from './routes/AuthMiddleware';
 
@@ -9,9 +9,7 @@ import Alert from './components/Alerts/Alert';
 import {useModal, useAlert} from './hooks';
 
 const App = ()=> {
-  const [isOpen, actionResponse , setIsOpen] =  useModal('CONFIRM_MODAL', {title : 'hoba' , contant : 'lala '});
-  const [isOpenTwo , setAlertIsOpen] = useAlert('info');
-  const [isOpenThree , setAlertIsOpenTwo] = useAlert('success' , {message : 'lolo' , duration : 2000});
+  
 
   return (
     <>
