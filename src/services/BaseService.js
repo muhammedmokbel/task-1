@@ -1,14 +1,13 @@
 import createAxiosInstance from "../axiosConfig";
 
 export default class BaseService {
-    constructor(baseUrl , headers = {} , token = null, interceptors = undefined ) {
+    constructor(baseUrl , headers = {}  ) {
       this.baseUrl = baseUrl; 
       this.headers = headers; 
-      this.token = token; 
-      this.request = createAxiosInstance(this.baseUrl, this.headers , interceptors); 
-    }
+      this.request = createAxiosInstance(this.baseUrl, this.headers ); 
+  }
+  
 
-    
 
 
 }

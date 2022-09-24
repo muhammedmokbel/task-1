@@ -5,8 +5,8 @@ import Snackbar from '@mui/material/Snackbar';
 import Slide from '@mui/material/Slide';
 import MuiAlert from "@mui/material/Alert";
 
-import { closeAlert } from '../../redux/alerts/reducer';
-
+import { closeAlert } from '../../redux/alerts/slice';
+/*eslint-disable */
 
 const AlertBar = React.forwardRef(function AlertBar(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -57,6 +57,6 @@ const Alert = () => {
         </Snackbar>
     </div>
   );
-}
+};
 
 export default Alert; 

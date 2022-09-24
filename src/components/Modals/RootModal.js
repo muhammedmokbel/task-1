@@ -1,7 +1,7 @@
 import React from 'react'; 
 import {useSelector, useDispatch} from 'react-redux';
 
-import { closeModal } from '../../redux/modals/reducer';
+import { closeModal } from '../../redux/modals/slice';
 
 import ConfirmationModal from './ConfirmationModals/ConfirmationModal';
 

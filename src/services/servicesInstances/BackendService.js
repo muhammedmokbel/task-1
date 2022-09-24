@@ -7,10 +7,31 @@ import {backendDev} from "../../config";
 
 class BackendService extends BaseService{
 
-    constructor(baseUrl,headers,  token, interceptors) {
-        super(baseUrl,   headers  , token,);
-
+    constructor(baseUrl, headers, token) {
+        super(baseUrl, headers);
+        this.token = token; 
+        this.initInterceptors(); 
+        
     }
+
+    initInterceptors = () => {
+        
+        this.request.interceptors.request.use(this.interceptorsReq);
+        this.request.interceptors.response.use(this.interceptorsRes);
+    }; 
+
+    interceptorsReq = (req) => {
+        req.headers.Authorization = this.token; 
+
+        return req;
+
+    }; 
+    
+    interceptorsRes = (res) => {
+        return res;
+
+    }; 
+
 
     // endpoints 
 
@@ -21,4 +42,4 @@ class BackendService extends BaseService{
 }
 
 
-export default new BackendService(backendDev.baseUrl,backendDev.generateHeaders(Storage.getItem(STORAGE_TAGS.TOKEN)),  Storage.getItem(STORAGE_TAGS.TOKEN) ); 
+export default new BackendService(backendDev.baseUrl,backendDev.headers,  Storage.getItem(STORAGE_TAGS.TOKEN) ); 

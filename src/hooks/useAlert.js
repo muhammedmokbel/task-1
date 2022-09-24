@@ -1,7 +1,7 @@
 import {useSelector , useDispatch} from 'react-redux';
 import { MESSAGES_TAGS } from '../constants/ErrorsMassages';
 
-import { openAlert, closeAlert } from '../redux/alerts/reducer';
+import { openAlert, closeAlert } from '../redux/alerts/slice';
 
 export const useAlert = (type , props = {}) => {
     if (!type)

@@ -1,6 +1,6 @@
 import {useSelector , useDispatch} from 'react-redux';
 import { MESSAGES_TAGS } from '../constants/ErrorsMassages';
-import { openModal, closeModal } from '../redux/modals/reducer';
+import { openModal, closeModal } from '../redux/modals/slice';
 
 export const useModal = (type, props={}) => {
     if (!type)
