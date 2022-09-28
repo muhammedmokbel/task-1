@@ -87,7 +87,7 @@ function* updateProductSaga({ payload }) {
        
         if (res.status)
         {
-          console.log('success'); 
+        
            yield put(updateProductSuccess()); 
            
           yield put(openAlert(
