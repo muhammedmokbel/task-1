@@ -1,8 +1,10 @@
-import {all, fork} from 'redux-saga/effects';
+import { all, fork } from 'redux-saga/effects';
+
+import productSagaWatcher from './product/saga';
 
 
 export default function* rootSaga () {
     yield all([
-        fork(() => {})
+        fork(productSagaWatcher)
     ]);
 }

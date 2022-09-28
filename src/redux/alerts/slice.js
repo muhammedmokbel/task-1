@@ -13,7 +13,7 @@ const alertSlice = createSlice({
     }, 
     reducers : {
         openAlert  : (state, action) => {
-            
+          
             state.isOpen = true;  
             state.anchor =action.payload.anchor || state.anchor;
             state.type = action.payload.type || state.type;

@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 
 
 const privateRoutes = [
+    { path: '/', component: Home },
     {path : '/home' , component : Home}
 ];
 

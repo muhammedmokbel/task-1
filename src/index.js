@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+
 import App from './App';
 import ErrorBoundary from './pages/ErrorBoundary/ErrorBoundary';
 import reportWebVitals from './reportWebVitals';
@@ -10,6 +10,8 @@ import store from './redux/store';
 import Storage from './lib/Storage';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import './assets/Scss/app.scss'; 
 
 
 

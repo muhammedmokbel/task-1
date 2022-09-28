@@ -6,15 +6,19 @@ export const useModal = (type, props={}) => {
     if (!type)
         throw new Error(MESSAGES_TAGS.MODAL_TYPE_SENT);
     const isOpen = useSelector(state => state.modal.isOpen); 
-    const actionResponse = useSelector(state => state.modal.actionResponse); 
+  
     const dispatch = useDispatch();
-    const setIsOpen = (value) => {
+    const setIsOpen = (value, addtionalProps = {}) => {
         if (typeof value !== 'boolean')
             dispatch(closeModal()); 
         else 
         {
             if (value)
-                dispatch(openModal({type, props})); 
+                dispatch(openModal({
+                    type, props: {
+                        ...props, 
+                        ...addtionalProps
+                }})); 
             else 
                 dispatch(closeModal()); 
         }
@@ -22,5 +26,5 @@ export const useModal = (type, props={}) => {
 
 
    
-    return [isOpen, actionResponse, setIsOpen]; 
+    return [isOpen, setIsOpen]; 
 };

@@ -4,10 +4,12 @@ import {useSelector, useDispatch} from 'react-redux';
 import { closeModal } from '../../redux/modals/slice';
 
 import ConfirmationModal from './ConfirmationModals/ConfirmationModal';
+import FormModal from './FormModal';
 
 
 const MODAL_COMPONENTS = {
-    CONFIRM_MODAL : ConfirmationModal, 
+    CONFIRM_MODAL: ConfirmationModal, 
+    FORM_MODAL : FormModal
   /* other modals */
 };
 

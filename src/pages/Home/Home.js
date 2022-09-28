@@ -1,12 +1,18 @@
 import React from 'react';
-
-import {Button} from 'react-bootstrap';
+import { Container } from 'reactstrap';
+import ProductForm from './ProductForm';
+import ProductTable from './ProductTable';
 
 const Home = () => {
     return (
-        <div>
-            <Button>Click me</Button>
-        </div>
+        <>
+            
+            <ProductForm />
+            <Container>
+                <ProductTable />
+            </Container>
+        
+        </>
     );
 };
 

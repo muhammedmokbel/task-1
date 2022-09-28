@@ -11,13 +11,9 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function ConfirmationModal({isOpen, closeModal , title = '' , contant = '' , buttons = {success :'yes' , fail :'No'} , action }) {
-
-  if (typeof buttons !== "object" || !buttons.success || !buttons.fail)
-    throw new Error('invalid Button Object !'); 
+export default function FormModal({isOpen, closeModal , title = '' , component:Component , ...rest }) {
 
 
-    
 
   return (
     <div>
@@ -31,18 +27,9 @@ export default function ConfirmationModal({isOpen, closeModal , title = '' , con
         fullWidth
       >
         <DialogTitle>{title}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
-            {contant}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => closeModal()}>{buttons.fail}</Button>
-          <Button onClick={() => {
-            closeModal(); 
-            action(); 
-          } }>{buttons.success}</Button>
-        </DialogActions>
+
+        <Component {...rest} />
+    
       </Dialog>
     </div>
   );

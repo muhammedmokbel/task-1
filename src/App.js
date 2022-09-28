@@ -6,7 +6,8 @@ import {privateRoutes , publicRoutes} from './routes/routes';
 
 import RootModal from './components/Modals/RootModal';
 import Alert from './components/Alerts/Alert';
-import {useModal, useAlert} from './hooks';
+import { useModal, useAlert } from './hooks';
+import Firebase from './lib/Firebase';
 
 const App = ()=> {
   
