@@ -1,5 +1,5 @@
 # build environment
-FROM node:15.13.0 as builder
+FROM node:16.10.0 as builder
 WORKDIR /app
 COPY . .
 ENV NODE_OPTIONS "--max-old-space-size=4096"
